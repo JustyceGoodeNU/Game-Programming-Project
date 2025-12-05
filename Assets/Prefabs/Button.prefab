@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2899167880097833434}
   - component: {fileID: 2955473492452700383}
   - component: {fileID: 8915972683984105910}
+  - component: {fileID: -5744307992093182181}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -105,7 +106,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -113,3 +114,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-5744307992093182181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960371975707928481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2f5d495d84d474cb213c4f02a12bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonController
+  linkedDoor: {fileID: 0}
