@@ -5,6 +5,7 @@ public class BaseballController : MonoBehaviour
     private Vector3 soundLocation;
     public AudioClip ballBounceSound;
     private AudioSource ballAudioSource;
+    private LucasController.Direction moveDirection;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,24 +13,26 @@ public class BaseballController : MonoBehaviour
         ballAudioSource = GetComponent<AudioSource>();
         soundLocation = new Vector3(0,0,0);
         //AudioSource.PlayClipAtPoint(ballBounceSound, transform.position, 1);
+
+        moveDirection = LucasController.lookDirection;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(LucasController.lookDirection == LucasController.Direction.LEFT)
+        if(moveDirection == LucasController.Direction.LEFT)
         {
             transform.Translate(Vector3.left * 5f * Time.deltaTime);
         }
-        else if(LucasController.lookDirection == LucasController.Direction.RIGHT)
+        else if(moveDirection == LucasController.Direction.RIGHT)
         {
             transform.Translate(Vector3.right * 5f * Time.deltaTime);
         }
-        else if(LucasController.lookDirection == LucasController.Direction.UP)
+        else if(moveDirection == LucasController.Direction.UP)
         {
             transform.Translate(Vector3.forward * 5f * Time.deltaTime);
         }
-        else if(LucasController.lookDirection == LucasController.Direction.DOWN)
+        else if(moveDirection == LucasController.Direction.DOWN)
         {
             transform.Translate(Vector3.back * 5f * Time.deltaTime);
         }
