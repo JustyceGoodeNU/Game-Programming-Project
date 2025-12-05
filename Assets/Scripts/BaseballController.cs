@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BaseballController : MonoBehaviour
 {
-    private Vector3 soundLocation;
+    public static Vector3 soundLocation;
     public AudioClip ballBounceSound;
     private AudioSource ballAudioSource;
 

@@ -57,5 +57,10 @@ public class LucasController : MonoBehaviour
             canFire = Time.time + fireRate;
             Instantiate(baseBallprefab, transform.position + new Vector3(0,0,0), transform.rotation);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AliceController.followLucas = !AliceController.followLucas;
+        }
     }
 }

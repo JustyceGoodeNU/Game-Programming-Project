@@ -33,10 +33,10 @@ public class DoorController : MonoBehaviour
 	
 		}  
 
-		if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OpenDoor();
-        }
+		// if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     OpenDoor();
+        // }
     }
 
     public void OpenDoor(){

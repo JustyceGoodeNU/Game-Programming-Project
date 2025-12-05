@@ -210,8 +210,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4227889827151656}
-  - component: {fileID: 8651420885908877542}
   - component: {fileID: 4354681421599270537}
+  - component: {fileID: 8110684445048757295}
   m_Layer: 0
   m_Name: Door_1_White
   m_TagString: Untagged
@@ -236,24 +236,6 @@ Transform:
   - {fileID: 4739028642209042}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8651420885908877542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949671195395142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 914281d01552be3438cc856dae469332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorController
-  open: 0
-  smooth: 1
-  DoorOpenAngle: -90
-  DoorCloseAngle: -90
-  openDoor: {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
-  closeDoor: {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
 --- !u!82 &4354681421599270537
 AudioSource:
   m_ObjectHideFlags: 0
@@ -351,6 +333,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!208 &8110684445048757295
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949671195395142}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1975789379832626
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +362,7 @@ GameObject:
   - component: {fileID: 23598625071032810}
   - component: {fileID: 65680862327526002}
   - component: {fileID: 82697407254320668}
-  - component: {fileID: 114410976665799846}
+  - component: {fileID: 2927174654893384570}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -562,7 +560,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114410976665799846
+--- !u!114 &2927174654893384570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,12 +569,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975789379832626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 731917776111cfd4e8e238be7a676f44, type: 3}
+  m_Script: {fileID: 11500000, guid: 914281d01552be3438cc856dae469332, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorController
   open: 0
   smooth: 1
-  DoorOpenAngle: -90
+  DoorOpenAngle: 90
   DoorCloseAngle: 0
   openDoor: {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
   closeDoor: {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
