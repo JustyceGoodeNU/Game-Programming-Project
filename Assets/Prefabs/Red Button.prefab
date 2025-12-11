@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8915972683984105910}
   - component: {fileID: -5744307992093182181}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Red Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960371975707928481}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0.1, z: 3.5}
   m_LocalScale: {x: 0.9, y: 0.01, z: 0.9}
   m_ConstrainProportionsScale: 0
@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2f5d495d84d474cb213c4f02a12bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonController
-  linkedDoor: {fileID: 0}
+  Door: {fileID: 1971930968367913212, guid: ad528d9058a642c4a9937c084e0ffb56, type: 3}

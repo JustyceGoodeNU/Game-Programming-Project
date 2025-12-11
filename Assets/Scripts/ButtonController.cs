@@ -3,6 +3,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     public GameObject Door;
+    private static int entitiesOnButton = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,8 +21,9 @@ public class ButtonController : MonoBehaviour
     {
         var doorController = Door.GetComponent<DoorController>();
         doorController.open = true;
+        entitiesOnButton++;
         //doorController.OpenDoor();
-        //Debug.Log("Open");
+        Debug.Log(entitiesOnButton);
 
     }
 
@@ -29,7 +31,12 @@ public class ButtonController : MonoBehaviour
     {
         var doorController = Door.GetComponent<DoorController>();
         //doorController.OpenDoor();
-        doorController.open = false;
+        entitiesOnButton--;
+        if (entitiesOnButton < 1)
+        {
+            doorController.open = false;
+        }
+        Debug.Log(entitiesOnButton);
         //Debug.Log("Close");
     }
 }

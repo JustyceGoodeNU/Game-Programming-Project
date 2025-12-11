@@ -33,22 +33,22 @@ public class LucasController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.A))
         {
-            Debug.Log("Left");
+            //Debug.Log("Left");
             lookDirection = Direction.LEFT;
         }
         if(Input.GetKeyDown(KeyCode.D))
         {
-            Debug.Log("Right");
+            //Debug.Log("Right");
             lookDirection = Direction.RIGHT;
         }
         if(Input.GetKeyDown(KeyCode.W))
         {
-            Debug.Log("Up");
+            //Debug.Log("Up");
             lookDirection = Direction.UP;
         }
         if(Input.GetKeyDown(KeyCode.S))
         {
-            Debug.Log("Down");
+            //Debug.Log("Down");
             lookDirection = Direction.DOWN;
         }
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2370600012283830472}
   - component: {fileID: 4808605315031680797}
-  - component: {fileID: 284732191865344637}
   m_Layer: 0
   m_Name: Red Door
   m_TagString: Untagged
@@ -132,22 +131,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!208 &284732191865344637
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971930968367913212}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &2210450010332760181
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +145,7 @@ GameObject:
   - component: {fileID: 3269184791487226116}
   - component: {fileID: 1884543150076875613}
   - component: {fileID: 9109457031081457839}
+  - component: {fileID: 7558731774751036330}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -377,6 +361,22 @@ MonoBehaviour:
   DoorCloseAngle: 0
   openDoor: {fileID: 8300000, guid: 44b63b0db16ce624b97e45ebde0a0971, type: 3}
   closeDoor: {fileID: 8300000, guid: bc37ad25465405a428a26ff0facd9a7b, type: 3}
+--- !u!208 &7558731774751036330
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210450010332760181}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1.0500001, z: 0.018000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: -0.5, y: 1.0500001, z: 0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &3237203428962648612
 GameObject:
   m_ObjectHideFlags: 0
