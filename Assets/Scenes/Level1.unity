@@ -2346,6 +2346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 960371975707928481, guid: 0e5df54133550184fa81fc068fa23a64, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2707555098142437789, guid: 0e5df54133550184fa81fc068fa23a64, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
@@ -7227,6 +7231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 960371975707928481, guid: 0e5df54133550184fa81fc068fa23a64, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2707555098142437789, guid: 0e5df54133550184fa81fc068fa23a64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -9971,7 +9979,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.06666667
+  m_VoxelSize: 0.083333336
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 71586d790036494459ac4b8a7000f451, type: 2}
   m_BuildHeightMesh: 0
