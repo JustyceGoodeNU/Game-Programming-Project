@@ -4,6 +4,7 @@ public class LucasController : MonoBehaviour
 {
     private float speed = 1f;
     private Rigidbody playerRb;
+    private Animator playerAnimator;
     public GameObject baseBallprefab;
 
     private float fireRate = 0.45f;
@@ -20,6 +21,7 @@ public class LucasController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,25 +33,37 @@ public class LucasController : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed;
         playerRb.MovePosition(playerRb.position + movement * Time.fixedDeltaTime * Time.timeScale);
 
+        //Check if the player is moving
+        if(movement.x != 0f || movement.z != 0f){
+            playerAnimator.SetBool("isMoving", true);
+        }
+        else{
+            playerAnimator.SetBool("isMoving", false);
+        }
+
         if(Input.GetKeyDown(KeyCode.A))
         {
             //Debug.Log("Left");
             lookDirection = Direction.LEFT;
+            transform.eulerAngles = new Vector3(0, -90, 0);
         }
         if(Input.GetKeyDown(KeyCode.D))
         {
             //Debug.Log("Right");
             lookDirection = Direction.RIGHT;
+            transform.eulerAngles = new Vector3(0, 90, 0);
         }
         if(Input.GetKeyDown(KeyCode.W))
         {
             //Debug.Log("Up");
             lookDirection = Direction.UP;
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         if(Input.GetKeyDown(KeyCode.S))
         {
             //Debug.Log("Down");
             lookDirection = Direction.DOWN;
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
         if(Input.GetMouseButton(0) && Time.time > canFire)
