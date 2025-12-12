@@ -47,12 +47,12 @@ public class BaseballController : MonoBehaviour
         //Debug.Log("Collision detected");
         if(other.gameObject.CompareTag("Wall")){
             //Debug.Log("Collision detected");
-            AudioSource.PlayClipAtPoint(ballBounceSound, transform.position, 1);
+            //AudioSource.PlayClipAtPoint(ballBounceSound, transform.position, SoundManager.sfxVolume);
             Destroy(gameObject);
             soundLocation = transform.position;
             //Debug.Log(transform.position);
             //AudioSource.PlayClipAtPoint(ballBounceSound, Camera.main.transform.position, 1);
-            AudioSource.PlayClipAtPoint(ballBounceSound, transform.position, 1);
+            AudioSource.PlayClipAtPoint(ballBounceSound, transform.position, SoundManager.sfxVolume);
         }
     }
 }
