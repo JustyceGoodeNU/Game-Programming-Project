@@ -23,7 +23,7 @@ public class AliceController : MonoBehaviour
     void Update()
     {
         //Check if Alice is moving
-        if(agent.hasPath && dist > 2.1){
+        if(agent.hasPath && dist > 1.5){
             animator.SetBool("isMoving", true);
         }
         else{
