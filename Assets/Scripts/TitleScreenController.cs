@@ -18,4 +18,9 @@ public class TitleScreenController : MonoBehaviour
     public void StartGame(){
         SceneManager.LoadScene("Level1");
     }
+
+    public void ExitGame(){
+        Application.Quit();
+        Debug.Log("Game is exiting");
+    }
 }
