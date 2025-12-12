@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject Door;
+    //public GameObject[] Door;
+    public GameObject[] Doors;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,8 +28,13 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        var doorController = Door.GetComponent<DoorController>();
-        doorController.open = true;
+        foreach(GameObject door in Doors)
+        {
+            var doorController = door.GetComponent<DoorController>();
+            doorController.open = true;
+        }
+        // var doorController = Door.GetComponent<DoorController>();
+        // doorController.open = true;
 
         //Debug.Log("Open");
 
@@ -36,8 +42,13 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        var doorController = Door.GetComponent<DoorController>();
-        doorController.open = false;
+        foreach(GameObject door in Doors)
+        {
+            var doorController = door.GetComponent<DoorController>();
+            doorController.open = false;
+        }
+        // var doorController = Door.GetComponent<DoorController>();
+        // doorController.open = false;
 
         //Debug.Log("Close");
     }
