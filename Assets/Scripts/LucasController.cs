@@ -46,24 +46,28 @@ public class LucasController : MonoBehaviour
             //Debug.Log("Left");
             lookDirection = Direction.LEFT;
             transform.eulerAngles = new Vector3(0, -90, 0);
+            //Debug.Log(lookDirection);
         }
         if(Input.GetKeyDown(KeyCode.D))
         {
             //Debug.Log("Right");
             lookDirection = Direction.RIGHT;
             transform.eulerAngles = new Vector3(0, 90, 0);
+            //Debug.Log(lookDirection);
         }
         if(Input.GetKeyDown(KeyCode.W))
         {
             //Debug.Log("Up");
             lookDirection = Direction.UP;
             transform.eulerAngles = new Vector3(0, 0, 0);
+            //Debug.Log(lookDirection);
         }
         if(Input.GetKeyDown(KeyCode.S))
         {
             //Debug.Log("Down");
             lookDirection = Direction.DOWN;
             transform.eulerAngles = new Vector3(0, 180, 0);
+            //Debug.Log(lookDirection);
         }
 
         if(Input.GetMouseButton(0) && Time.time > canFire)
