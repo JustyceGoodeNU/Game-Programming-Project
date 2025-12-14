@@ -8,7 +8,18 @@ public class PauseManager : MonoBehaviour
 {
     public TextMeshProUGUI pauseHeaderText;
     public Button continueButton;
+    public Button openSettingsButton;
     public Button exitGameButton;
+
+    //Settings UI
+    public TextMeshProUGUI settingsHeader;
+    public TextMeshProUGUI bgmText;
+    public Slider bgmSlider;
+    
+    public TextMeshProUGUI sfxText;
+    public Slider sfxSlider;
+    
+    public Button closeSettingsButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +38,7 @@ public class PauseManager : MonoBehaviour
     {
         pauseHeaderText.gameObject.SetActive(true);
         continueButton.gameObject.SetActive(true);
+        openSettingsButton.gameObject.SetActive(true);
         exitGameButton.gameObject.SetActive(true);
     }
 
@@ -34,11 +46,46 @@ public class PauseManager : MonoBehaviour
     {
         pauseHeaderText.gameObject.SetActive(false);
         continueButton.gameObject.SetActive(false);
+        openSettingsButton.gameObject.SetActive(false);
         exitGameButton.gameObject.SetActive(false);
     }
 
     public void ExitGame()
     {
         SceneManager.LoadScene("Title");
+    }
+
+    public void OpenSettings()
+    {
+        //Disable Pause UI
+        pauseHeaderText.gameObject.SetActive(false);
+        continueButton.gameObject.SetActive(false);
+        openSettingsButton.gameObject.SetActive(false);
+        exitGameButton.gameObject.SetActive(false);
+
+        //Enable Settings UI
+        settingsHeader.gameObject.SetActive(true);
+        sfxText.gameObject.SetActive(true);
+        sfxSlider.gameObject.SetActive(true);
+        bgmText.gameObject.SetActive(true);
+        bgmSlider.gameObject.SetActive(true);
+        closeSettingsButton.gameObject.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        //Enable Pause UI
+        pauseHeaderText.gameObject.SetActive(true);
+        continueButton.gameObject.SetActive(true);
+        openSettingsButton.gameObject.SetActive(true);
+        exitGameButton.gameObject.SetActive(true);
+
+        //Disable Settings UI
+        settingsHeader.gameObject.SetActive(false);
+        sfxText.gameObject.SetActive(false);
+        sfxSlider.gameObject.SetActive(false);
+        bgmText.gameObject.SetActive(false);
+        bgmSlider.gameObject.SetActive(false);
+        closeSettingsButton.gameObject.SetActive(false);
     }
 }

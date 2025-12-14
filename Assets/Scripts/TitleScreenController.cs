@@ -13,8 +13,12 @@ public class TitleScreenController : MonoBehaviour
 
     //Settings UI
     public TextMeshProUGUI settingsHeader;
+    public TextMeshProUGUI bgmText;
+    public Slider bgmSlider;
+    
     public TextMeshProUGUI sfxText;
     public Slider sfxSlider;
+    
     public Button closeSettingsButton;
 
     //public Button startGameButton;
@@ -37,7 +41,7 @@ public class TitleScreenController : MonoBehaviour
     {
         //Disable Title UI
         titleText.gameObject.SetActive(false);
-        startGameButton.gameObject.SetActive(false);;
+        startGameButton.gameObject.SetActive(false);
         exitGameButton.gameObject.SetActive(false);
         openSettingsButton.gameObject.SetActive(false);
 
@@ -45,6 +49,8 @@ public class TitleScreenController : MonoBehaviour
         settingsHeader.gameObject.SetActive(true);
         sfxText.gameObject.SetActive(true);
         sfxSlider.gameObject.SetActive(true);
+        bgmText.gameObject.SetActive(true);
+        bgmSlider.gameObject.SetActive(true);
         closeSettingsButton.gameObject.SetActive(true);
     }
 
@@ -52,7 +58,7 @@ public class TitleScreenController : MonoBehaviour
     {
         //Enable Title UI
         titleText.gameObject.SetActive(true);
-        startGameButton.gameObject.SetActive(true);;
+        startGameButton.gameObject.SetActive(true);
         exitGameButton.gameObject.SetActive(true);
         openSettingsButton.gameObject.SetActive(true);
 
@@ -60,6 +66,8 @@ public class TitleScreenController : MonoBehaviour
         settingsHeader.gameObject.SetActive(false);
         sfxText.gameObject.SetActive(false);
         sfxSlider.gameObject.SetActive(false);
+        bgmText.gameObject.SetActive(false);
+        bgmSlider.gameObject.SetActive(false);
         closeSettingsButton.gameObject.SetActive(false);
     }
 }
