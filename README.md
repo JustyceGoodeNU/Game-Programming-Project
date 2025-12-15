@@ -1,4 +1,4 @@
-# Game Programminng Project
+# Game Programming Project
 
 Copyright (c) 2025 Justyce Goode
 
