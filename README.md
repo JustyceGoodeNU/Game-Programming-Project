@@ -1,5 +1,7 @@
 # Game Programminng Project
 
+Copyright (c) 2025 Justyce Goode
+
 This is my final project for CSYE 7270 Building Virtual Environments course at Northeastern University.
 
 ## Mansion Escape
