@@ -37,3 +37,12 @@ A Really Dark Alley by Loyalty Freak Music | https://freemusicarchive.org/music/
 Music promoted by https://www.chosic.com/free-music/all/
 Creative Commons CC0 Public Domain
 https://creativecommons.org/publicdomain/zero/1.0/
+
+## Notes on UI visuals
+
+The UI elements were implemented using the free aspect mode on Unity and aren't visually optimized.
+The UI elements *are* optimized for 1080p resolution on the demo branch.
+
+## Known Issues
+
+* There is a bug where, upon entering Level 2, Alice's NavMesh Agent tracks the end of the level even though it should be reset.
