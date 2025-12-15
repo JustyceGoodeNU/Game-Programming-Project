@@ -23,7 +23,7 @@ public class SoundManager : MonoBehaviour
             sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolume");
         }
         else{
-            sfxVolumeSlider.value = 0.3f;
+            sfxVolumeSlider.value = 0.9f;
         }
 
         //sfxVolume = 0.4f;
