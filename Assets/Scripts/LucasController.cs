@@ -27,58 +27,61 @@ public class LucasController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        if (PauseManager.gameActive)
+        {
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed;
-        playerRb.MovePosition(playerRb.position + movement * Time.fixedDeltaTime * Time.timeScale);
+            Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed;
+            playerRb.MovePosition(playerRb.position + movement * Time.fixedDeltaTime * Time.timeScale);
 
-        //Check if the player is moving
-        if(movement.x != 0f || movement.z != 0f){
-            playerAnimator.SetBool("isMoving", true);
-        }
-        else{
-            playerAnimator.SetBool("isMoving", false);
-        }
+            //Check if the player is moving
+            if(movement.x != 0f || movement.z != 0f){
+                playerAnimator.SetBool("isMoving", true);
+            }
+            else{
+                playerAnimator.SetBool("isMoving", false);
+            }
 
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            //Debug.Log("Left");
-            lookDirection = Direction.LEFT;
-            transform.eulerAngles = new Vector3(0, -90, 0);
-            //Debug.Log(lookDirection);
-        }
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            //Debug.Log("Right");
-            lookDirection = Direction.RIGHT;
-            transform.eulerAngles = new Vector3(0, 90, 0);
-            //Debug.Log(lookDirection);
-        }
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            //Debug.Log("Up");
-            lookDirection = Direction.UP;
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            //Debug.Log(lookDirection);
-        }
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            //Debug.Log("Down");
-            lookDirection = Direction.DOWN;
-            transform.eulerAngles = new Vector3(0, 180, 0);
-            //Debug.Log(lookDirection);
-        }
+            if(Input.GetKeyDown(KeyCode.A))
+            {
+                //Debug.Log("Left");
+                lookDirection = Direction.LEFT;
+                transform.eulerAngles = new Vector3(0, -90, 0);
+                //Debug.Log(lookDirection);
+            }
+            if(Input.GetKeyDown(KeyCode.D))
+            {
+                //Debug.Log("Right");
+                lookDirection = Direction.RIGHT;
+                transform.eulerAngles = new Vector3(0, 90, 0);
+                //Debug.Log(lookDirection);
+            }
+            if(Input.GetKeyDown(KeyCode.W))
+            {
+                //Debug.Log("Up");
+                lookDirection = Direction.UP;
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                //Debug.Log(lookDirection);
+            }
+            if(Input.GetKeyDown(KeyCode.S))
+            {
+                //Debug.Log("Down");
+                lookDirection = Direction.DOWN;
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                //Debug.Log(lookDirection);
+            }
 
-        if(Input.GetMouseButton(0) && Time.time > canFire)
-        {
-            canFire = Time.time + fireRate;
-            Instantiate(baseBallprefab, transform.position + new Vector3(0,0,0), transform.rotation);
-        }
+            if(Input.GetMouseButton(0) && Time.time > canFire)
+            {
+                canFire = Time.time + fireRate;
+                Instantiate(baseBallprefab, transform.position + new Vector3(0,0,0), transform.rotation);
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AliceController.followLucas = !AliceController.followLucas;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                AliceController.followLucas = !AliceController.followLucas;
+            }
         }
     }
 }

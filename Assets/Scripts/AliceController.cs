@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class AliceController : MonoBehaviour
 {
     public GameObject player;
@@ -12,43 +14,55 @@ public class AliceController : MonoBehaviour
     //float lookRadian = 0;
     float dist = 0; //Distance between Alice and destination
 
+    public GameObject levelExit;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //player = GameObject.Find("Lucas");
         animator = GetComponent<Animator>();
+        agent.ResetPath();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        //Check if Alice is moving
-        if(agent.hasPath && dist > 1.5){
-            animator.SetBool("isMoving", true);
-        }
-        else{
-            animator.SetBool("isMoving", false);
-        }
+    {   
+        if (PauseManager.gameActive)
+        {
+            //Check if Alice is moving
+            if(agent.hasPath && dist > 1.5){
+                animator.SetBool("isMoving", true);
+            }
+            else{
+                animator.SetBool("isMoving", false);
+            }
 
-        if(followLucas)
-        {
-            //TODO: Either make this a fixed point or explain as Alice following his footsteps
-            agent.SetDestination(player.transform.position);
-            
-            BaseballController.soundLocation = Vector3.zero;
-        }
-        else if(BaseballController.soundLocation != Vector3.zero)
-        {
-            agent.SetDestination(BaseballController.soundLocation);
-        }
+            if(Level1Exit.LucasLeftLevel1 || Level2Exit.LucasLeftLevel2)
+            {
+                agent.SetDestination(levelExit.transform.position);
+            }
+            else if(followLucas)
+            {
+                agent.SetDestination(player.transform.position);
+                
+                BaseballController.soundLocation = Vector3.zero;
+            }
+            else if(BaseballController.soundLocation != Vector3.zero)
+            {
+                agent.SetDestination(BaseballController.soundLocation);
+            }
 
-        if(agent.hasPath)
+            if(agent.hasPath)
+            {
+                lookDirection = new Vector2(agent.destination.x, agent.destination.z) - new Vector2(transform.position.x, transform.position.z);
+                lookDirection = lookDirection.normalized;
+                lookAngle = Vector2.SignedAngle(Vector2.right, lookDirection);
+                transform.eulerAngles = new Vector3(0, -lookAngle + 90, 0);
+                dist = Vector3.Distance(transform.position, agent.destination);
+            }
+        }
+        else
         {
-            lookDirection = new Vector2(agent.destination.x, agent.destination.z) - new Vector2(transform.position.x, transform.position.z);
-            lookDirection = lookDirection.normalized;
-            lookAngle = Vector2.SignedAngle(Vector2.right, lookDirection);
-            transform.eulerAngles = new Vector3(0, -lookAngle + 90, 0);
-            dist = Vector3.Distance(transform.position, agent.destination);
+            agent.ResetPath();
         }
     }
 }
