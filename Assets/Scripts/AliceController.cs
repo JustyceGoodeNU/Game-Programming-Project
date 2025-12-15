@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class AliceController : MonoBehaviour
 {
     public GameObject player;
@@ -12,16 +14,18 @@ public class AliceController : MonoBehaviour
     //float lookRadian = 0;
     float dist = 0; //Distance between Alice and destination
 
+    public GameObject levelExit;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //player = GameObject.Find("Lucas");
         animator = GetComponent<Animator>();
+        agent.ResetPath();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         if (PauseManager.gameActive)
         {
             //Check if Alice is moving
@@ -32,9 +36,12 @@ public class AliceController : MonoBehaviour
                 animator.SetBool("isMoving", false);
             }
 
-            if(followLucas)
+            if(Level1Exit.LucasLeftLevel1 || Level2Exit.LucasLeftLevel2)
             {
-                //TODO: Either make this a fixed point or explain as Alice following his footsteps
+                agent.SetDestination(levelExit.transform.position);
+            }
+            else if(followLucas)
+            {
                 agent.SetDestination(player.transform.position);
                 
                 BaseballController.soundLocation = Vector3.zero;
