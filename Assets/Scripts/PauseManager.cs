@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
+    public static bool gameActive = true;
+
     public TextMeshProUGUI pauseHeaderText;
     public Button continueButton;
     public Button openSettingsButton;
@@ -40,6 +42,7 @@ public class PauseManager : MonoBehaviour
         continueButton.gameObject.SetActive(true);
         openSettingsButton.gameObject.SetActive(true);
         exitGameButton.gameObject.SetActive(true);
+        gameActive = false;
     }
 
     public void ContinueGame()
@@ -48,6 +51,7 @@ public class PauseManager : MonoBehaviour
         continueButton.gameObject.SetActive(false);
         openSettingsButton.gameObject.SetActive(false);
         exitGameButton.gameObject.SetActive(false);
+        gameActive = true;
     }
 
     public void ExitGame()
