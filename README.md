@@ -6,7 +6,8 @@ This is my final project for CSYE 7270 Building Virtual Environments course at N
 
 ## Mansion Escape
 
-This is a sound-based top down puzzle game.
+This is a top down puzzle game. The main characters, Lucas and Alice are trapped
+in a haunted mansion and must figure out how to escape.
 
 ## Unity Asset Credits
 
