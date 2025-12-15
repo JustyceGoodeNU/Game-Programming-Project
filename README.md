@@ -1,6 +1,6 @@
 # Game Programminng Project
 
-This is my final project for the Building Virtual Environments course at Northeastern University.
+This is my final project for CSYE 7270 Building Virtual Environments course at Northeastern University.
 
 ## Mansion Escape
 
